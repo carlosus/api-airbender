@@ -1,0 +1,33 @@
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+ul li {
+    list-style: none;
+    border: 10px solid;
+    border-radius: 5%;
+    width: 300px;
+    margin: 0 5px 5px 0;
+}
+
+li blockquote {
+    margin: 0 5px;
+}
+
+li section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+li img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 0;
+    box-sizing: border-box;
+    border: 14px solid;
+}
