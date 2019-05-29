@@ -6,7 +6,7 @@ class CharacterItem extends Component {
         return /*html*/ `
             <li>
                 <h2>${character.name}</h2>
-                <img src="${character.image}" alt="${character.name}">
+                <img src="${character.photoUrl}" alt="${character.name}">
                 <p>${character.affiliation}</p>
             </li>
         `;
