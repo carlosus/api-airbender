@@ -1,6 +1,7 @@
 import Component from './Component.js';
 import Header from './Header.js';
 import List from './List.js';
+import Loading from './Loading.js';
 import api from '../services/api.js';
 
 class App extends Component {
@@ -16,12 +17,18 @@ class App extends Component {
         api.getCharacters()
             .then(charactersData => {
                 list.update({ characters: charactersData });
-                console.log(charactersData);
+            })
+            .finally(() => {
+                loading.update({ done: false });
             });
+        
+        const loading = new Loading({ done: true });
+        const loadingDOM = loading.render();
 
         const main = dom.querySelector('main');
 
         dom.prepend(headerDOM);
+        main.appendChild(loadingDOM);
         main.appendChild(listDOM);
 
         return dom;
