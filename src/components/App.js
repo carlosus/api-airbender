@@ -16,6 +16,7 @@ class App extends Component {
         api.getCharacters()
             .then(charactersData => {
                 list.update({ characters: charactersData });
+                console.log(charactersData);
             });
 
         const main = dom.querySelector('main');

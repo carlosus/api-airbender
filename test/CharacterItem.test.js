@@ -8,7 +8,6 @@ test('make item from data', assert => {
     const character = {
         name: '46th Earth King',
         photoUrl: 'https://vignette.wikia.nocookie.net/avatar/images/5/51/46th_Earth_King.png/revision/latest?cb=20130627160441',
-        affiliation: 'Affiliation: Earth Kingdom Earth Kingdom Royal Family'
     };
 
     const characterItem = new CharacterItem({ character });
@@ -18,7 +17,6 @@ test('make item from data', assert => {
         <li>
             <h2>46th Earth King</h2>
             <img src="https://vignette.wikia.nocookie.net/avatar/images/5/51/46th_Earth_King.png/revision/latest?cb=20130627160441" alt="46th Earth King">
-            <p>Affiliation: Earth Kingdom Earth Kingdom Royal Family</p>
         </li>
     `);
 }); 

@@ -6,9 +6,9 @@ class List extends Component {
         const dom = this.renderDOM();
 
         const characters = this.props.characters;
-
-        characters.forEach(quote => {
-            const characterItem = new CharacterItem({ character: quote });
+        console.log(characters);
+        characters.forEach(character => {
+            const characterItem = new CharacterItem({ character });
             const characterItemDOM = characterItem.render();
             dom.appendChild(characterItemDOM);
         });
