@@ -13,23 +13,33 @@ class App extends Component {
 
         const list = new List({ characters: [] });
         const listDOM = list.render();
-
-        api.getCharacters()
-            .then(charactersData => {
-                list.update({ characters: charactersData });
-            })
-            .finally(() => {
-                loading.update({ done: false });
-            });
         
         const loading = new Loading({ done: true });
         const loadingDOM = loading.render();
-
+        
         const main = dom.querySelector('main');
-
+        
         dom.prepend(headerDOM);
         main.appendChild(loadingDOM);
         main.appendChild(listDOM);
+        
+        function loadCharacters() {
+            const params = window.location.hash.slice(1);
+
+            api.getCharacters(params)
+                .then(charactersData => {
+                    list.update({ characters: charactersData });
+                })
+                .finally(() => {
+                    loading.update({ done: false });
+                });
+        }
+
+        loadCharacters();
+
+        window.addEventListener('hashchange', () => {
+            loadCharacters();
+        });
 
         return dom;
     }

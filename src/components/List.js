@@ -6,7 +6,6 @@ class List extends Component {
         const dom = this.renderDOM();
 
         const characters = this.props.characters;
-        console.log(characters);
         characters.forEach(character => {
             const characterItem = new CharacterItem({ character });
             const characterItemDOM = characterItem.render();
